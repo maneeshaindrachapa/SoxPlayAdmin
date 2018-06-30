@@ -10326,8 +10326,8 @@ body,html{
   }
   
   .dropdown-menu-lg {
-    min-width: 280px;
-    max-width: 300px;
+    min-width: 180px;
+    max-width: 200px;
     padding: 0;
   }
   
