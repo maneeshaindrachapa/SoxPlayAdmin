@@ -1,3 +1,6 @@
 .dropdown-menu{
     display: block !important;
 }
+.navbar-expand .navbar-nav .nav-link{
+    padding-left: 0 !important;
+}
