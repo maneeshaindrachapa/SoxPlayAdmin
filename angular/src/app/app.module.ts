@@ -6,16 +6,20 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin/signin.component';
 import { NavbarComponent } from './components/adminPanel/navbar/navbar.component';
+import { WeeklySalesComponent } from './components/adminPanel/weekly-sales/weekly-sales.component';
+import { DashboardComponent } from './components/adminPanel/dashboard/dashboard.component';
 
 const appRoutes: Routes= [
-  {path:"", component:SigninComponent},{path:"home",component:NavbarComponent}
+  {path:"", component:SigninComponent},{path:"dashboard",component:DashboardComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
-    NavbarComponent
+    NavbarComponent,
+    WeeklySalesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
