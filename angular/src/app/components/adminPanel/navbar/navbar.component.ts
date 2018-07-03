@@ -7,7 +7,6 @@ import * as $ from 'jquery';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  logout:boolean=false;
   pushmenu:string="sidebar-collapse";
   pushmenuVisibility:boolean=true;
   constructor() { }
@@ -16,7 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout_btn_clicked(){
-    this.logout=!this.logout;
+    alert("want to logout?");
   }
   pushmenu_btn_clicked(){
     this.pushmenuVisibility=!this.pushmenuVisibility;
