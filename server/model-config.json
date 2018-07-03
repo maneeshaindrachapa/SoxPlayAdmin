@@ -13,26 +13,71 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
+  "user": {
+    "dataSource": "mysql",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
-  "AccessToken": {
-    "dataSource": "db",
+  "accessToken": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "mysql",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mysql",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
-    "public": false,
-    "options": {
-      "strictObjectIDCoercion": true
-    }
+    "dataSource": "mysql",
+    "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mysql",
     "public": false
+  },
+  "address": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "cartDetail": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "item": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "theme": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "order": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "orderDetail": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "wishListDetail": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "combinationDetails": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "exchangeRate": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

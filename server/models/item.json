@@ -1,0 +1,47 @@
+{
+  "name": "item",
+  "plural": "items",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "hits": {
+      "type": "number",
+      "default": 0
+    },
+    "onSale": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "color": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "theme": {
+      "type": "belongsTo",
+      "model": "theme"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

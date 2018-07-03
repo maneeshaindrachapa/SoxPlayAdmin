@@ -1,0 +1,29 @@
+{
+  "name": "exchangeRate",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "timestamp": {
+      "type": "date", "dataType": "timestamp"
+    },
+    "AUD": {
+      "type": "number",
+      "dataType": "float", "precision": 8
+    },
+    "EUR": {
+      "type": "number",
+      "dataType": "float", "precision": 8
+    },
+    "GBP": {
+      "type": "number",
+      "dataType": "float", "precision": 8
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

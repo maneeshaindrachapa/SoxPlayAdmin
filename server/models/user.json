@@ -1,0 +1,66 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "properties": {
+    "fullname": {
+      "type": "string",
+      "required": false
+    },
+    "gender": {
+      "type": "number",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "contact": {
+      "type": "string",
+      "required": false
+    },
+    "sockSize": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "accessToken",
+      "foreignKey": "userId"
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": "userId"
+    },
+    "credentials": {
+      "type": "hasMany",
+      "model": "userCredential",
+      "foreignKey": "userId"
+    },
+    "address": {
+      "type": "hasMany",
+      "model": "address"
+    },
+    "cartDetail": {
+      "type": "hasMany",
+      "model": "cartDetail"
+    },
+    "wishListDetail": {
+      "type": "hasMany",
+      "model": "wishListDetail"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

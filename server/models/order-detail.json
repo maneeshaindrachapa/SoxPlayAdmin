@@ -1,0 +1,32 @@
+{
+  "name": "orderDetail",
+  "plural": "orderDetails",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "size": {
+      "type": "number",
+      "required": true
+    },
+    "quantity": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "order"
+    },
+    "item": {
+      "type": "belongsTo",
+      "model": "item"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "combinationDetails",
+  "plural": "combinationDetails",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id_1": {
+      "type": "number",
+      "required": true
+    },
+    "id_2": {
+      "type": "number",
+      "required": true
+    },
+    "fb_id": {
+      "type": "string"
+    },
+    "insta_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

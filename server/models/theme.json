@@ -1,0 +1,33 @@
+{
+  "name": "theme",
+  "plural": "themes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "expired": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "fullPackPrice": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "item": {
+      "type": "hasMany",
+      "model": "item"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,36 @@
+{
+  "name": "cartDetail",
+  "plural": "cartDetails",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "addedDate": {
+      "type": "date",
+      "required": true
+    },
+    "size": {
+      "type": "number",
+      "required": true
+    },
+    "quantity": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "item": {
+      "type": "belongsTo",
+      "model": "item"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -3,13 +3,13 @@
     "name": "db",
     "connector": "memory"
   },
-  "mysqlDS": {
+  "mysql": {
     "host": "localhost",
     "port": 3306,
     "url": "",
     "database": "soxplay_test",
     "password": "",
-    "name": "mysqlDS",
+    "name": "mysql",
     "user": "root",
     "connector": "mysql"
   }

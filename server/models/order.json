@@ -1,0 +1,46 @@
+{
+  "name": "order",
+  "plural": "orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "addedDate": {
+      "type": "date",
+      "required": true
+    },
+    "shippingCost": {
+      "type": "number",
+      "required": true
+    },
+    "totalCost": {
+      "type": "number",
+      "required": true
+    },
+    "finalCost": {
+      "type": "number",
+      "required": true
+    },
+    "trackingId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orderDetail": {
+      "type": "hasMany",
+      "model": "orderDetail"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
