@@ -8,6 +8,7 @@ import { SigninComponent } from './components/signin/signin/signin.component';
 import { NavbarComponent } from './components/adminPanel/navbar/navbar.component';
 import { WeeklySalesComponent } from './components/adminPanel/weekly-sales/weekly-sales.component';
 import { DashboardComponent } from './components/adminPanel/dashboard/dashboard.component';
+import {ToggleService}  from './services/toggle.service';
 
 const appRoutes: Routes= [
   {path:"", component:SigninComponent},{path:"dashboard",component:DashboardComponent}
@@ -26,7 +27,7 @@ const appRoutes: Routes= [
     AngularFontAwesomeModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ToggleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
