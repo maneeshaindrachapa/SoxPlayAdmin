@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Item} from "../../../services/sdk/models";
 import { ItemApi,ThemeApi } from '../../../services/sdk/services/custom';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-items',
@@ -25,6 +26,7 @@ export class ItemsComponent implements OnInit {
   item = new Item();
 
   selected = [];
+
   constructor(private itemApi:ItemApi,private themeApi:ThemeApi) { 
 
   }
@@ -38,6 +40,7 @@ export class ItemsComponent implements OnInit {
       this.rows = res;
     });
   }
+
   onSale(row) {
     console.log(row);
   }
@@ -55,14 +58,35 @@ export class ItemsComponent implements OnInit {
       this.rows = [...this.rows];
       this.selected = [];
     });
+    Swal("Updated!", "You Item Details are Updated", "success");
   }
 
   deleteItem() {
-    if (confirm('Are you sure to delete this items ?')) {
-      this.itemApi.deleteById(this.item.id).subscribe(res => {
-        this.ngOnInit();
-      });
-    }
+    Swal({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this item!',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        Swal(
+          'Deleted!',
+          'Your item has been deleted.',
+          'success'
+        ),
+        this.itemApi.deleteById(this.item.id).subscribe(res => {
+          this.ngOnInit();
+        })
+      } else{
+        Swal(
+          'Cancelled',
+          'Your item is safe',
+          'error'
+        )
+      }
+    })
   }
 
   selectItem(i) {

@@ -1,15 +1,6 @@
 <div style="padding: 20px;" class="table">
-  <ngx-datatable class="material"
-                 [rows]="rows"
-                 [columnMode]="'force'"
-                 [columns]="columns"
-                 [headerHeight]="50"
-                 [footerHeight]="50"
-                 [rowHeight]="'auto'"
-                 [limit]="12"
-                 [selected]="selected"
-                 (select)="selectItem($event)"
-                 [selectionType]="'single'">
+  <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50" [footerHeight]="50"
+    [rowHeight]="'auto'" [limit]="12" [selected]="selected" (select)="selectItem($event)" [selectionType]="'single'">
 
     <ngx-datatable-column name="ID">
       <ng-template let-value="value" ngx-datatable-cell-template>
@@ -53,4 +44,28 @@
       </ng-template>
     </ngx-datatable-column>
   </ngx-datatable>
+</div>
+<div fxLayout="row" *ngIf="selected.length != 0" style="padding: 20px;">
+  <div fxFlex="100%">
+    <form class="form" fxLayout="row">
+      <div fxFlex="40%">
+        <div class="form-group">
+          <select class="custom-select" required [(ngModel)]="item.themeId" name="theme">
+            <option value="">Select Theme</option>
+            <option [value]="x.id" *ngFor="let x of themeList">{{x.name}}</option>
+          </select>
+        </div>
+        <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="item.name">
+        <input type="number" class="form-control" placeholder="Price" name="price" [(ngModel)]="item.price">
+        <input type="number" class="form-control" placeholder="Sale Price" name="sprice" [(ngModel)]="item['salePrice']">
+        <input type="text" class="form-control" placeholder="Color" name="color" [(ngModel)]="item.color">
+      </div>
+      <div class="form-group " style="margin-left: 20px" fxFlex="100%">
+        <label class="white-color">Item Description</label>
+        <textarea class="form-control" rows="5" name="desc" [(ngModel)]="item.description"></textarea>
+        <button class="btn btn-primary" (click)="editItem()" *ngIf="selected.length != 0" style="margin:5px;float: right;"><i class="fa fa-edit"></i></button>
+        <button class="btn btn-danger" (click)="deleteItem()" *ngIf="selected.length != 0" style="margin:5px;float: right;"><i class="fa fa-trash"></i></button>
+      </div>
+    </form>
+  </div>
 </div>
