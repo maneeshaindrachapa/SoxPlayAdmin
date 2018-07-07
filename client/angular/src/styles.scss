@@ -13046,5 +13046,7 @@ body,html{
   .elevation-5 {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   }
-  
-  /*# sourceMappingURL=adminlte.css.map */
+
+  @import '~@swimlane/ngx-datatable/release/index.css';
+  @import '~@swimlane/ngx-datatable/release/themes/material.css';
+  @import '~@swimlane/ngx-datatable/release/assets/icons.css';
