@@ -1,0 +1,55 @@
+<div style="padding:20px;" class="table">
+  <ngx-datatable class="material"
+                 [rows]="rows"
+                 [columnMode]="'force'"
+                 [columns]="columns"
+                 [headerHeight]="50"
+                 [footerHeight]="50"
+                 [rowHeight]="'auto'"
+                 [limit]="12"
+                 [selected]="selected"
+                 (select)="selectItem($event)"
+                 [selectionType]="'single'">
+
+    <ngx-datatable-column name="ID">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Name">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Price">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Description">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value.substr(0, 30)}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Hits">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="On Sale">
+      <ng-template let-value="value" ngx-datatable-cell-template let-row="row">
+        <input type="checkbox" [checked]="value" (change)="onSale(row)" />
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Color">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Theme" prop="Theme">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <div>{{value.name}}</div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
