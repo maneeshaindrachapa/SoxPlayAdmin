@@ -7,19 +7,23 @@
   },
   "properties": {
     "timestamp": {
-      "type": "date", "dataType": "timestamp"
+      "type": "date",
+      "dataType": "timestamp"
     },
     "AUD": {
       "type": "number",
-      "dataType": "float", "precision": 8
+      "dataType": "float",
+      "precision": 8
     },
     "EUR": {
       "type": "number",
-      "dataType": "float", "precision": 8
+      "dataType": "float",
+      "precision": 8
     },
     "GBP": {
       "type": "number",
-      "dataType": "float", "precision": 8
+      "dataType": "float",
+      "precision": 8
     }
   },
   "validations": [],

@@ -9,5 +9,6 @@ export * from './OrderDetail';
 export * from './WishListDetail';
 export * from './CombinationDetails';
 export * from './ExchangeRate';
+export * from './Email';
 export * from './SDKModels';
 export * from './logger.service';

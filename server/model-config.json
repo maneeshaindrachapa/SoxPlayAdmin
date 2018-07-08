@@ -79,5 +79,8 @@
   "exchangeRate": {
     "dataSource": "mysql",
     "public": true
+  },
+  "Email": {
+    "dataSource": "email"
   }
 }

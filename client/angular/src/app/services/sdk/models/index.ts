@@ -9,5 +9,6 @@ export * from './OrderDetail';
 export * from './WishListDetail';
 export * from './CombinationDetails';
 export * from './ExchangeRate';
+export * from './Email';
 export * from './BaseModels';
 export * from './FireLoopRef';
