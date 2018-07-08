@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import * as $ from 'jquery';
 export class NavbarComponent implements OnInit {
   pushmenu:string="sidebar-collapse";
   pushmenuVisibility:boolean=true;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
@@ -24,5 +25,19 @@ export class NavbarComponent implements OnInit {
     }else{
       this.pushmenu="sidebar-open";
     }
+  }
+
+  //routing
+  dashboard_route(){
+    this.router.navigate(["dashboard"]);
+  }
+  items_route(){
+    this.router.navigate(["items"]);
+  }
+  theme_route(){
+    this.router.navigate(["theme"]);
+  }
+  user_route(){
+    this.router.navigate(["users"]);
   }
 }

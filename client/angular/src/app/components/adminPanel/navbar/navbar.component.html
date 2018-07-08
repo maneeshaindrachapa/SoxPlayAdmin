@@ -31,17 +31,17 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="" class="brand-link">
-        <img src="../../../../assets/images/logo_round.png" alt="soxplay logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">SoxPlay | Admin</span>
+      <a (click)="dashboard_route()" class="brand-link">
+        <img src="../../../../assets/images/logo_round.png" alt="soxplay logo" class="brand-image img-circle elevation-3" style="opacity: .8;">
+        <span class="brand-text font-weight-light" style="color: #FFF">SoxPlay | Admin</span>
       </a>
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
+            <li class="nav-item has-treeview">
+              <a class="nav-link" (click)="dashboard_route()">
                 <i class="nav-icon fa  fa-chart-line"></i>
                 <p>
                   Dashboard
@@ -49,142 +49,35 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a (click)="items_route()" class="nav-link">
                 <i class="nav-icon fa fa-th"></i>
                 <p>
                   Items
                 </p>
               </a>
             </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-pie-chart"></i>
+            <li class="nav-item">
+              <a (click)="theme_route()" class="nav-link">
+                <i class="nav-icon fa fa-palette"></i>
                 <p>
-                  Charts
-                  <i class="right fa fa-angle-left"></i>
+                  Themes
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ChartJS</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Flot</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Inline</p>
-                  </a>
-                </li>
-              </ul>
+            </li>
+            <li class="nav-item">
+              <a (click)="user_route()" class="nav-link">
+                <i class="nav-icon fa fa-users"></i>
+                <p>
+                  Users
+                </p>
+              </a>
             </li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-book"></i>
                 <p>
                   Pages
-                  <i class="fa fa-angle-left right"></i>
                 </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Invoice</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Profile</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Login</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Register</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Lockscreen</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-plus-square-o"></i>
-                <p>
-                  Extras
-                  <i class="fa fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Error 404</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Error 500</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Blank Page</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Starter Page</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-header">MISCELLANEOUS</li>
-            <li class="nav-item">
-              <a href="" class="nav-link">
-                <i class="nav-icon fa fa-file"></i>
-                <p>Documentation</p>
-              </a>
-            </li>
-            <li class="nav-header">LABELS</li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-danger"></i>
-                <p class="text">Important</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-warning"></i>
-                <p>Warning</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-info"></i>
-                <p>Informational</p>
               </a>
             </li>
           </ul>
