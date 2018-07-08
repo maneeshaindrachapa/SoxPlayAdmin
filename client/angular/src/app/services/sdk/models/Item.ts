@@ -12,6 +12,7 @@ export interface ItemInterface {
   "onSale": boolean;
   "color"?: string;
   "weight"?: number;
+  "salePrice": number;
   "id"?: number;
   "themeId"?: number;
   theme?: Theme;
@@ -25,6 +26,7 @@ export class Item implements ItemInterface {
   "onSale": boolean;
   "color": string;
   "weight": number;
+  "salePrice": number;
   "id": number;
   "themeId": number;
   theme: Theme;
@@ -89,6 +91,10 @@ export class Item implements ItemInterface {
         },
         "weight": {
           name: 'weight',
+          type: 'number'
+        },
+        "salePrice": {
+          name: 'salePrice',
           type: 'number'
         },
         "id": {
