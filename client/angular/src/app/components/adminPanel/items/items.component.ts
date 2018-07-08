@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Item} from "../../../services/sdk/models";
-import { ItemApi,ThemeApi } from '../../../services/sdk/services/custom';
+import { Item } from "../../../services/sdk/models";
+import { ItemApi, ThemeApi } from '../../../services/sdk/services/custom';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -11,14 +11,14 @@ import Swal from 'sweetalert2'
 export class ItemsComponent implements OnInit {
   rows = [];
   columns = [
-    {prop: 'id', name: 'ID'},
-    {prop: 'name', name: 'Name'},
-    {prop: 'price', name: 'Price'},
-    {prop: 'description', name: 'Description'},
-    {prop: 'hits', name: 'Hits'},
-    {prop: 'onSale', name: 'onSale'},
-    {prop: 'color', name: 'Color'},
-    {prop: 'themeId', name: 'Theme'},
+    { prop: 'id', name: 'ID' },
+    { prop: 'name', name: 'Name' },
+    { prop: 'price', name: 'Price' },
+    { prop: 'description', name: 'Description' },
+    { prop: 'hits', name: 'Hits' },
+    { prop: 'onSale', name: 'onSale' },
+    { prop: 'color', name: 'Color' },
+    { prop: 'themeId', name: 'Theme' },
   ];
 
   themeList = [];
@@ -27,7 +27,7 @@ export class ItemsComponent implements OnInit {
 
   selected = [];
 
-  constructor(private itemApi:ItemApi,private themeApi:ThemeApi) { 
+  constructor(private itemApi: ItemApi, private themeApi: ThemeApi) {
 
   }
 
@@ -35,7 +35,7 @@ export class ItemsComponent implements OnInit {
     this.themeApi.find().subscribe(res => {
       this.themeList = res;
     });
-    this.itemApi.find({include: 'theme'}).subscribe(res => {
+    this.itemApi.find({ include: 'theme' }).subscribe(res => {
       console.log(res);
       this.rows = res;
     });
@@ -53,6 +53,13 @@ export class ItemsComponent implements OnInit {
   }
 
   editItem() {
+    for (let theme = 1; theme <= this.themeList.length; theme++) {
+      if (theme = this.item.themeId) {
+        console.log(this.themeList[theme - 1]);
+        this.item.theme = this.themeList[theme - 1];
+        break;
+      }
+    }
     this.itemApi.upsert(this.item).subscribe(res => {
       this.selected[0] = res;
       this.rows = [...this.rows];
@@ -76,10 +83,10 @@ export class ItemsComponent implements OnInit {
           'Your item has been deleted.',
           'success'
         ),
-        this.itemApi.deleteById(this.item.id).subscribe(res => {
-          this.ngOnInit();
-        })
-      } else{
+          this.itemApi.deleteById(this.item.id).subscribe(res => {
+            this.ngOnInit();
+          })
+      } else {
         Swal(
           'Cancelled',
           'Your item is safe',
