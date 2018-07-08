@@ -1,0 +1,43 @@
+<div style="padding:5px 10px 0px 20px ">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="theme.name">
+        </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Full pack price" name="fullpackprice" [(ngModel)]="theme.fullPackPrice">
+        </div>
+        <div class="col-sm-1">
+          <button class="btn btn-dark" style="margin: 2px" (click)="addTheme()">Add Theme</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <div class="table" style="padding: 20px;">
+    <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50" [footerHeight]="50"
+      [rowHeight]="'auto'" [limit]="10" [selected]="selected" [selectionType]="'single'" (select)="selectTheme($event)">
+    </ngx-datatable>
+  </div>
+</div>
+<div style="padding:5px 10px 0px 20px " *ngIf="selected.length != 0">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="theme_.name">
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Full pack price" name="fullpackprice" [(ngModel)]="theme_.fullPackPrice">
+          </div>
+          <div class="col-sm-4">
+              <button class="btn btn-dark" style="margin: 2px" (click)="editTheme()">Edit Theme &nbsp;<i class="fa fa-edit"></i></button>
+              <button class="btn btn-dark" style="margin: 2px" (click)="deleteTheme()">Delete Theme &nbsp;<i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
