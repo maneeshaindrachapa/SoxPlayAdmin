@@ -1,6 +1,6 @@
 <div style="padding: 20px;" class="table">
   <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50" [footerHeight]="50"
-    [rowHeight]="'auto'" [limit]="12" [selected]="selected" (select)="selectItem($event)" [selectionType]="'single'">
+    [rowHeight]="'auto'" [limit]="10" [selected]="selected" (select)="selectItem($event)" [selectionType]="'single'">
 
     <ngx-datatable-column name="ID">
       <ng-template let-value="value" ngx-datatable-cell-template>
