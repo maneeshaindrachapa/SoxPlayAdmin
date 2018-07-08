@@ -33,6 +33,10 @@
     },
     "weight": {
       "type": "number"
+    },
+    "salePrice": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
