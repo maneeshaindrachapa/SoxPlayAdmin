@@ -1,0 +1,42 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div class="table" style="padding: 20px;">
+    <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [columns]="columns" [headerHeight]="50" [footerHeight]="50"
+      [rowHeight]="'auto'" [limit]="5" [selected]="selected" [selectionType]="'multi'" (activate)="onActivate($event)" (select)="selectUser($event)">
+    </ngx-datatable>
+  </div>
+</div>
+
+<div>
+  <p class="lead" style="padding-left:20px">Select Recepients to Send an Email</p>
+  <ul>
+    <li *ngFor="let x of selected" style="list-style: none;">{{x.email}}
+      <i class="fa fa-check-circle" style="margin-left:2%" (click)="addEmail(x.id,x.email)"></i>
+    </li>
+  </ul>
+  <div fxLayout="row" fxLayoutAlign="left">
+    <div fxFlex="80%" *ngIf="emailList.length!=0">
+      <div class="row">
+        <div class="col-md-10">
+          <ul>
+            <li *ngFor="let x of emailList" style="list-style: none;">{{x[1]}}
+              <i class="fa fa-times-circle" style="margin-left:2%" (click)="removeEmail(x)"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="padding-left:20px">
+  <div class="col-md-8">
+    <input type="text" class="form-control" name="subject__" [(ngModel)]="subject__" placeholder="Subject">
+  </div>
+  <div class="col-md-4">
+  <button class="btn btn-dark" (click)="sendEmail()" *ngIf="emailList.length!=0">Send &nbsp;<i class="fa fa-envelope"></i></button>
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center">
+  <ckeditor [(ngModel)]="ckeditorContent" [config]="{uiColor: '#ffffff'}" [readonly]="false" debounce="500" style="width:100%;padding:20px">
+  </ckeditor>
+
+</div>

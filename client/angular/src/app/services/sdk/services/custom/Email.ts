@@ -30,6 +30,35 @@ export class EmailApi extends BaseLoopBackApi {
   }
 
   /**
+   * send email using loopback
+   *
+   * @param {object} data Request data.
+   *
+   *  - `msg` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `greeting` – `{string}` - 
+   */
+  public sendEmail(msg: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Emails/sendEmail";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof msg !== 'undefined' && msg !== null) _urlParams.msg = msg;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    console.log(_urlParams.msg);
+    console.log(result);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `Email`.
    */
