@@ -62,7 +62,7 @@ export class UserComponent implements OnInit {
       this.email__+=this.emailList[i][1]+",";
     }
     this.email__+=this.emailList[this.emailList.length-1][1];
-    this.email.from="maneesh.15@cse.mrt.ac.lk";
+    this.email.from="soxplaydev@gmail.com";
     this.email.to=this.email__;
     this.email.subject=this.subject__;
     this.email.html=this.ckeditorContent.substring(0,this.ckeditorContent.length-1);
