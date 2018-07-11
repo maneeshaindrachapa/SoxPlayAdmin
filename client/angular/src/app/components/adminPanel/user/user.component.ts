@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User,Email } from "../../../services/sdk/models";
 import { UserApi,EmailApi } from '../../../services/sdk/services/custom';
 import Swal from 'sweetalert2';
-import { send } from 'q';
 
 @Component({
   selector: 'app-user',
@@ -49,7 +48,17 @@ export class UserComponent implements OnInit {
     let tempUser=[];
     tempUser.push(id);
     tempUser.push(email);
-    this.emailList.push(tempUser);
+
+    let b:boolean=true;
+    for(let i=0;i<this.emailList.length;i++){
+      if(this.emailList[i][0]==tempUser[0]){
+        //already on list
+        b=false;
+      }
+    }
+    if(b){
+      this.emailList.push(tempUser);
+    }
   }
   removeEmail(obj){
     const index: number = this.emailList.indexOf(obj);
@@ -68,8 +77,9 @@ export class UserComponent implements OnInit {
     this.email.html=this.ckeditorContent.substring(0,this.ckeditorContent.length-1);
     console.log("\""+JSON.stringify(this.email)+"\"");
     this.emailApi.sendEmail("\""+JSON.stringify(this.email)+"\"").subscribe(res=>{
-      console.log(res);
+      Swal("Email Sent!", "Your Email sent Successfully", "success");
     },error=>{
+      Swal("Server Error!", "Please try again later", "error");
       console.log(error);
     });
     this.emailList=[];
