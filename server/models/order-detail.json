@@ -14,6 +14,14 @@
     "quantity": {
       "type": "number",
       "required": true
+    },
+    "fullpack": {
+      "type": "number",
+      "required": true
+    },
+    "pair": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
