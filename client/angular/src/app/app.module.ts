@@ -22,6 +22,7 @@ import { ThemeFullComponent } from './components/adminPanel/theme-full/theme-ful
 import { UserComponent } from './components/adminPanel/user/user.component';
 import { UserFullComponent } from './components/adminPanel/user-full/user-full.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { DataBoxComponent } from './components/adminPanel/data-box/data-box.component';
 
 const appRoutes: Routes= [
   {path:"", component:SigninComponent},
@@ -44,7 +45,8 @@ const appRoutes: Routes= [
     ThemeComponent,
     ThemeFullComponent,
     UserComponent,
-    UserFullComponent
+    UserFullComponent,
+    DataBoxComponent
   ],
   imports: [
     FlexModule,

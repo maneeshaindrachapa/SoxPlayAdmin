@@ -53,8 +53,6 @@ export class EmailApi extends BaseLoopBackApi {
     let _urlParams: any = {};
     if (typeof msg !== 'undefined' && msg !== null) _urlParams.msg = msg;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    console.log(_urlParams.msg);
-    console.log(result);
     return result;
   }
 
