@@ -9,7 +9,7 @@ import { parseDate } from '../../../../../node_modules/ngx-bootstrap/chronos';
 })
 export class DataBoxComponent implements OnInit {
   date_now:Date = new Date();
-  date_old:Date;
+  date_old:Date=new Date();
   sales:number;
   totalOrders:number;
   incompleteOrders:number
@@ -20,7 +20,7 @@ export class DataBoxComponent implements OnInit {
   sales_weekly:number=0;
 
   constructor(private userApi:UserApi,private orderApi:OrderApi,private orderDetailApi:OrderDetailApi) { 
-    this.date_old==new Date(this.date_now.getDate()-7);
+    this.date_old.setDate(this.date_now.getDate()-6);
   }
 
   ngOnInit() {
@@ -69,12 +69,13 @@ export class DataBoxComponent implements OnInit {
           temp+=pair*quantity*2;
         }
         if( itemID>0){
-          this.total_sold_items+=itemID*quantity;
-          temp+=itemID*quantity;
+          this.total_sold_items+=1*quantity;
+          temp+=1*quantity;
         }
         if(parseDate(data[i]["order"]["addedDate"])<=this.date_now && parseDate(data[i]["order"]["addedDate"])>=this.date_old){
           this.items_weekly+=temp;
         }
+        //console.log(this.total_sold_items);
       }
     });
   }
