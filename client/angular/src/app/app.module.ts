@@ -15,7 +15,7 @@ import { DashboardComponent } from './components/adminPanel/dashboard/dashboard.
 import { AddItemComponent } from './components/adminPanel/add-item/add-item.component';
 import { ItemsComponent } from './components/adminPanel/items/items.component';
 import { ItemsEditDeleteComponent } from './components/adminPanel/items-edit-delete/items-edit-delete.component';
-import { SDKBrowserModule } from './services/sdk/index';
+import { SDKBrowserModule } from './services/sdk';
 import {FlexModule} from '@angular/flex-layout';
 import { ThemeComponent } from './components/adminPanel/theme/theme.component';
 import { ThemeFullComponent } from './components/adminPanel/theme-full/theme-full.component';
@@ -23,6 +23,8 @@ import { UserComponent } from './components/adminPanel/user/user.component';
 import { UserFullComponent } from './components/adminPanel/user-full/user-full.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { DataBoxComponent } from './components/adminPanel/data-box/data-box.component';
+import { OrdersChartComponent } from './components/adminPanel/orders-chart/orders-chart.component';
+import { SalesChartComponent } from './components/adminPanel/sales-chart/sales-chart.component';
 
 const appRoutes: Routes= [
   {path:"", component:SigninComponent},
@@ -46,7 +48,9 @@ const appRoutes: Routes= [
     ThemeFullComponent,
     UserComponent,
     UserFullComponent,
-    DataBoxComponent
+    DataBoxComponent,
+    OrdersChartComponent,
+    SalesChartComponent
   ],
   imports: [
     FlexModule,
