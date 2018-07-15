@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Chart } from 'chart.js';
 import { OrderDetailApi } from '../../../services/sdk/services/custom';
-import { parseDate } from '../../../../../node_modules/ngx-bootstrap/chronos';
+import { parseDate } from 'ngx-bootstrap/chronos';
 
 @Component({
   selector: 'app-weekly-sales',
@@ -14,8 +14,8 @@ export class WeeklySalesComponent implements OnInit {
   date_old: Date = new Date();
   date_old1: Date = new Date();
   weekly_saleitems: number = 0;
-  weekly_saleitems_:number=0;
-  percentage:number=0;
+  weekly_saleitems_: number = 0;
+  percentage: number = 0;
 
   constructor(private orderDetailApi: OrderDetailApi, private elementRef: ElementRef) {
     this.date_old.setDate(this.date_now.getDate() - 6);
@@ -48,7 +48,7 @@ export class WeeklySalesComponent implements OnInit {
 
       for (let j = 0; j < dates_.length; j++) {
         let temp_sales = 0;
-        let temp_sales_=0;
+        let temp_sales_ = 0;
         for (let i = 0; i < data.length; i++) {
           let quantity = parseInt(data[i]["quantity"]);
           let fullPack = parseInt(data[i]["fullpack"]);
@@ -74,14 +74,14 @@ export class WeeklySalesComponent implements OnInit {
         sales_weekly.push(temp_sales);
         sales_weekly1.push(temp_sales_);
       }
-      for(let i=0;i<sales_weekly.length;i++){
-        this.weekly_saleitems+=sales_weekly[i];
-        this.weekly_saleitems_+=sales_weekly1[i];
+      for (let i = 0; i < sales_weekly.length; i++) {
+        this.weekly_saleitems += sales_weekly[i];
+        this.weekly_saleitems_ += sales_weekly1[i];
       }
       this.calcPercentage();
       let mode = 'index'
       let intersect = true
-      let htmlRef = this.elementRef.nativeElement.querySelector('#visitors-chart');
+      let htmlRef = this.elementRef.nativeElement.querySelector('#items-chart');
       this.chart = new Chart(htmlRef, {
         type: 'line',
         data: {
@@ -94,13 +94,13 @@ export class WeeklySalesComponent implements OnInit {
               pointBorderColor: '#007bff',
               pointBackgroundColor: '#007bff',
               fill: false
-            },{
-              data                : sales_weekly1,
-              backgroundColor     : 'tansparent',
-              borderColor         : '#ced4da',
-              pointBorderColor    : '#ced4da',
+            }, {
+              data: sales_weekly1,
+              backgroundColor: 'tansparent',
+              borderColor: '#ced4da',
+              pointBorderColor: '#ced4da',
               pointBackgroundColor: '#ced4da',
-              fill                : false
+              fill: false
             }
           ]
         },
@@ -120,6 +120,9 @@ export class WeeklySalesComponent implements OnInit {
           scales: {
             yAxes: [{
               display: true,
+              ticks: {
+                beginAtZero: true
+              },
               gridLines: {
                 display: true,
                 lineWidth: "4px",
@@ -138,7 +141,7 @@ export class WeeklySalesComponent implements OnInit {
       });
     });
   }
-  calcPercentage(){
-    this.percentage=parseFloat((((this.weekly_saleitems-this.weekly_saleitems_)/this.weekly_saleitems_)*100).toPrecision(4));
+  calcPercentage() {
+    this.percentage = parseFloat((((this.weekly_saleitems - this.weekly_saleitems_) / this.weekly_saleitems_) * 100).toPrecision(4));
   }
 }
