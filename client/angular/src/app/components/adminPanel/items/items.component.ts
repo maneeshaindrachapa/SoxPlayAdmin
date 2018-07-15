@@ -42,7 +42,6 @@ export class ItemsComponent implements OnInit {
 
   onSale(row) {
     row.onSale=!row.onSale;
-    console.log(row.id);
     this.itemApi.upsert(row).subscribe(res=>{
       //addemail wishlist function
     });

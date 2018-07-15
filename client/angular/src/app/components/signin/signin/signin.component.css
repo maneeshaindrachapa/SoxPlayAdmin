@@ -7,6 +7,7 @@
 }
 .container_{
   background:linear-gradient(rgba(200,200,200,0.2),rgba(200,200,200,0.25)),url("../../../../assets/images/signin_background.jpg") center no-repeat;
+  background-size: cover;
 	height:100%;
 }
 div.login {
@@ -36,7 +37,7 @@ div.login {
   position:absolute;
   width:80px;
   height:80px;
-  background:#ffa800;
+  background:#007bff;
   color:#fff;
   bottom:-35px;
   left:50%;
@@ -87,7 +88,7 @@ div.login {
   outline:none;
   height:40px;
   text-transform:uppercase;
-  background:#ffa800;
+  background:#007bff;
   width:100%;
   color:#fff;
   cursor:pointer;
