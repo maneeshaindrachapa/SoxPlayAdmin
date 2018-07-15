@@ -41,7 +41,7 @@ export class DataBoxComponent implements OnInit {
       for(let i=0;i<data.length;i++){
         this.totalSales+=parseFloat(data[i]['finalCost']);
 
-        if(parseDate(data[i]["addedDate"])<=this.date_now && parseDate(data[i]["addedDate"])>=this.date_old){
+        if(parseDate(data[i]["addedDate"]).getDate()<=this.date_now.getDate() && parseDate(data[i]["addedDate"]).getDate()>=this.date_old.getDate() && parseDate(data[i]["addedDate"]).getMonth()<=this.date_now.getMonth() && parseDate(data[i]["addedDate"]).getMonth()>=this.date_old.getMonth()&&parseDate(data[i]["addedDate"]).getFullYear()<=this.date_now.getFullYear() && parseDate(data[i]["addedDate"]).getFullYear()>=this.date_old.getFullYear() ){
           this.sales_weekly+=parseFloat(data[i]['finalCost']);
         }
       }
@@ -72,7 +72,7 @@ export class DataBoxComponent implements OnInit {
           this.total_sold_items+=1*quantity;
           temp+=1*quantity;
         }
-        if(parseDate(data[i]["order"]["addedDate"])<=this.date_now && parseDate(data[i]["order"]["addedDate"])>=this.date_old){
+        if(parseDate(data[i]["order"]["addedDate"]).getDate()<=this.date_now.getDate() && parseDate(data[i]["order"]["addedDate"]).getDate()>=this.date_old.getDate() && parseDate(data[i]["order"]["addedDate"]).getMonth()<=this.date_now.getMonth() && parseDate(data[i]["order"]["addedDate"]).getMonth()>=this.date_old.getMonth() && parseDate(data[i]["order"]["addedDate"]).getFullYear()<=this.date_now.getFullYear() && parseDate(data[i]["order"]["addedDate"]).getFullYear()>=this.date_old.getFullYear() ){
           this.items_weekly+=temp;
         }
         //console.log(this.total_sold_items);
