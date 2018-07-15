@@ -36,13 +36,16 @@ export class ItemsComponent implements OnInit {
       this.themeList = res;
     });
     this.itemApi.find({ include: 'theme' }).subscribe(res => {
-      console.log(res);
       this.rows = res;
     });
   }
 
   onSale(row) {
-    console.log(row);
+    row.onSale=!row.onSale;
+    console.log(row.id);
+    this.itemApi.upsert(row).subscribe(res=>{
+      //addemail wishlist function
+    });
   }
 
   addItem() {
