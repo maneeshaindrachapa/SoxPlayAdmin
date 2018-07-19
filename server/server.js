@@ -6,10 +6,11 @@ var boot = require('loopback-boot');
 var app = module.exports = loopback();
 var loopbackPassport = require('loopback-component-passport');
 var PassportConfigurator = loopbackPassport.PassportConfigurator;
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var path = require('path');
 var bodyParser = require('body-parser');
-var cors = require('cors');
-
-
+var flash      = require('express-flash');
 
 app.get("/", (req, res) => {
   res.send("Server working....");
@@ -28,6 +29,8 @@ app.start = function () {
   });
 };
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function (err) {
@@ -37,4 +40,9 @@ boot(app, __dirname, function (err) {
     app.start();
 });
 
-
+// to support JSON-encoded bodies
+app.middleware('parse', bodyParser.json());
+// to support URL-encoded bodies
+app.middleware('parse', bodyParser.urlencoded({
+  extended: true,
+}));

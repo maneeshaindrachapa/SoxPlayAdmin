@@ -17,11 +17,11 @@
     },
     "fullpack": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "pair": {
       "type": "number",
-      "required": true
+      "required": false
     }
   },
   "validations": [],
