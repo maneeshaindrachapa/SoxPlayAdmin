@@ -82,5 +82,13 @@
   },
   "Email": {
     "dataSource": "email"
+  },
+  "adminAccessToken": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "admin": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

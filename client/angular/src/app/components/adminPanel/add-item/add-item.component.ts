@@ -14,7 +14,7 @@ export class AddItemComponent implements OnInit {
 
   constructor(private itemApi:ItemApi,private themeApi:ThemeApi) {
     
-   }
+  }
 
   ngOnInit() {
     this.themeApi.find().subscribe(res => {
