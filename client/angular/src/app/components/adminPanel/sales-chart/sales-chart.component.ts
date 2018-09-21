@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Chart } from 'chart.js';
 import { OrderApi } from '../../../services/sdk/services/custom';
 import { parseDate } from 'ngx-bootstrap/chronos';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-sales-chart',
@@ -132,6 +133,10 @@ export class SalesChartComponent implements OnInit {
   }
 
   calcPercentage() {
-    this.percentage = parseFloat((((this.weekly_salerev - this.weekly_salerev_) / this.weekly_salerev_) * 100).toPrecision(4));
+    if(this.weekly_salerev_==0){
+      this.percentage = parseFloat((((this.weekly_salerev - 0) /1) * 100).toPrecision(4));
+    }else{
+      this.percentage = parseFloat((((this.weekly_salerev - this.weekly_salerev_) / this.weekly_salerev_) * 100).toPrecision(4));
+    }
   }
 }

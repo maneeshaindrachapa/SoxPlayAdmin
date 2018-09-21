@@ -12,7 +12,7 @@ export class DataBoxComponent implements OnInit {
   date_old:Date=new Date();
   sales:number;
   totalOrders:number;
-  incompleteOrders:number
+  incompleteOrders:number=0;
   customers:number;
   total_sold_items:number=0;
   items_weekly:number=0;
@@ -48,9 +48,13 @@ export class DataBoxComponent implements OnInit {
     });
   }
   getIncompleteOrders(){
-    /*this.orderApi.byStatus("pending").subscribe(data=>{
-      this.incompleteOrders=data.length;
-    });*/
+    this.orderApi.find().subscribe(data => {
+      for(let i=0;i<data.length;i++){
+        if(data[i]['status']=="pending"){
+          this.incompleteOrders+=1;
+        }
+      }
+    })
   }
   getItemsSold(){
     this.orderDetailApi.find({include:["order"]}).subscribe(data=>{
@@ -75,7 +79,6 @@ export class DataBoxComponent implements OnInit {
         if(parseDate(data[i]["order"]["addedDate"]).getDate()<=this.date_now.getDate() && parseDate(data[i]["order"]["addedDate"]).getDate()>=this.date_old.getDate() && parseDate(data[i]["order"]["addedDate"]).getMonth()<=this.date_now.getMonth() && parseDate(data[i]["order"]["addedDate"]).getMonth()>=this.date_old.getMonth() && parseDate(data[i]["order"]["addedDate"]).getFullYear()<=this.date_now.getFullYear() && parseDate(data[i]["order"]["addedDate"]).getFullYear()>=this.date_old.getFullYear() ){
           this.items_weekly+=temp;
         }
-        //console.log(this.total_sold_items);
       }
     });
   }

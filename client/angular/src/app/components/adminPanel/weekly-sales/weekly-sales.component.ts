@@ -142,6 +142,10 @@ export class WeeklySalesComponent implements OnInit {
     });
   }
   calcPercentage() {
-    this.percentage = parseFloat((((this.weekly_saleitems - this.weekly_saleitems_) / this.weekly_saleitems_) * 100).toPrecision(4));
+    if(this.weekly_saleitems_==0){
+      this.percentage = parseFloat((((this.weekly_saleitems - 0) / 1) * 100).toPrecision(4));
+    }else{
+      this.percentage = parseFloat((((this.weekly_saleitems - this.weekly_saleitems_) / this.weekly_saleitems_) * 100).toPrecision(4));
+    }
   }
 }
