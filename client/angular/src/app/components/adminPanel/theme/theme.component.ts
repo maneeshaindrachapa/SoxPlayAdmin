@@ -14,7 +14,7 @@ export class ThemeComponent implements OnInit {
     {prop: 'id', name: 'ID'},
     {prop: 'name', name: 'Theme Name'},
     {prop: 'expired', name: 'Expired'},
-    {prop: 'fullPackPrice', name: 'Full Pack Price'},
+    /*{prop: 'fullPackPrice', name: 'Full Pack Price'},*/
   ];
 
   selected = [];

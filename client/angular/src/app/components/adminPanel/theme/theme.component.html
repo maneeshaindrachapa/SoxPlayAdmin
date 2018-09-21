@@ -5,9 +5,9 @@
         <div class="col-sm-4">
           <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="theme.name">
         </div>
-        <div class="col-sm-4">
+        <!--div class="col-sm-4">
           <input type="text" class="form-control" placeholder="Full pack price" name="fullpackprice" [(ngModel)]="theme.fullPackPrice">
-        </div>
+        </div-->
         <div class="col-sm-1">
           <button class="btn btn-dark" style="margin: 2px" (click)="addTheme()">Add Theme</button>
         </div>
@@ -31,8 +31,14 @@
             <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="theme_.name">
           </div>
           <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="Full pack price" name="fullpackprice" [(ngModel)]="theme_.fullPackPrice">
+            <select class="form-control" name="expired" [(ngModel)]="theme_.expired">
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
           </div>
+          <!--div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Full pack price" name="fullpackprice" [(ngModel)]="theme_.fullPackPrice">
+          </div-->
           <div class="col-sm-4">
               <button class="btn btn-dark" style="margin: 2px" (click)="editTheme()">Edit Theme &nbsp;<i class="fa fa-edit"></i></button>
               <button class="btn btn-dark" style="margin: 2px" (click)="deleteTheme()">Delete Theme &nbsp;<i class="fa fa-trash"></i></button>

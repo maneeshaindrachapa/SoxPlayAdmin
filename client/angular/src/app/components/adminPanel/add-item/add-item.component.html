@@ -10,7 +10,7 @@
         <div class="card-body">
           <div class="form-group">
             <select class="custom-select" required [(ngModel)]="item.themeId" name="theme">
-              <option value="">Select Theme</option>
+              <option value=""  disabled selected>Select Theme</option>
               <option [value]="x.id" *ngFor="let x of themeList">{{x.name}}</option>
             </select>
           </div>
@@ -25,6 +25,14 @@
           </div>
           <div class="form-group">
             <input type="text" class="form-control" id="color" placeholder="Color" name="color" [(ngModel)]="item.color">
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="expired" [(ngModel)]="item.category">
+              <option value="" disabled selected>Sox Type</option>
+              <option value="sox-1">sox-1</option>
+              <option value="sox-3">sox-3</option>
+              <option value="sox-6">sox-6</option>
+            </select>
           </div>
           <textarea class="form-control" rows="3" placeholder="Item Description"  name="desc" [(ngModel)]="item.description"></textarea>
         </div>
