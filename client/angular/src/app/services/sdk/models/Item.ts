@@ -7,12 +7,14 @@ declare var Object: any;
 export interface ItemInterface {
   "name": string;
   "price": number;
-  "description": any;
+  "salePrice": number;
+  "description": string;
   "hits"?: number;
-  "onSale": boolean;
+  "disabled": boolean;
   "color"?: string;
   "weight"?: number;
-  "salePrice": number;
+  "category": string;
+  "link"?: string;
   "id"?: number;
   "themeId"?: number;
   theme?: Theme;
@@ -21,12 +23,14 @@ export interface ItemInterface {
 export class Item implements ItemInterface {
   "name": string;
   "price": number;
-  "description": any;
+  "salePrice": number;
+  "description": string;
   "hits": number;
-  "onSale": boolean;
+  "disabled": boolean;
   "color": string;
   "weight": number;
-  "salePrice": number;
+  "category": string;
+  "link": string;
   "id": number;
   "themeId": number;
   theme: Theme;
@@ -71,17 +75,21 @@ export class Item implements ItemInterface {
           name: 'price',
           type: 'number'
         },
+        "salePrice": {
+          name: 'salePrice',
+          type: 'number'
+        },
         "description": {
           name: 'description',
-          type: 'any'
+          type: 'string'
         },
         "hits": {
           name: 'hits',
           type: 'number',
           default: 0
         },
-        "onSale": {
-          name: 'onSale',
+        "disabled": {
+          name: 'disabled',
           type: 'boolean',
           default: false
         },
@@ -93,9 +101,15 @@ export class Item implements ItemInterface {
           name: 'weight',
           type: 'number'
         },
-        "salePrice": {
-          name: 'salePrice',
-          type: 'number'
+        "category": {
+          name: 'category',
+          type: 'string',
+          default: 'single'
+        },
+        "link": {
+          name: 'link',
+          type: 'string',
+          default: ''
         },
         "id": {
           name: 'id',

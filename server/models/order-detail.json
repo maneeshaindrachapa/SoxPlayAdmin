@@ -16,12 +16,10 @@
       "required": true
     },
     "fullpack": {
-      "type": "number",
-      "required": false
+      "type": "number"
     },
     "pair": {
-      "type": "number",
-      "required": false
+      "type": "boolean"
     }
   },
   "validations": [],

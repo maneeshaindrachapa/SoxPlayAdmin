@@ -43,6 +43,10 @@
     "country": {
       "type": "string",
       "required": true
+    },
+    "default": {
+      "type": "boolean",
+      "default": false
     }
   },
   "validations": [],

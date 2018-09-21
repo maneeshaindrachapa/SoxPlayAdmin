@@ -8,8 +8,8 @@ declare var Object: any;
 export interface OrderDetailInterface {
   "size": number;
   "quantity": number;
-  "fullpack": number;
-  "pair": number;
+  "fullpack"?: number;
+  "pair"?: boolean;
   "id"?: number;
   "orderId"?: number;
   "itemId"?: number;
@@ -21,7 +21,7 @@ export class OrderDetail implements OrderDetailInterface {
   "size": number;
   "quantity": number;
   "fullpack": number;
-  "pair": number;
+  "pair": boolean;
   "id": number;
   "orderId": number;
   "itemId": number;
@@ -74,7 +74,7 @@ export class OrderDetail implements OrderDetailInterface {
         },
         "pair": {
           name: 'pair',
-          type: 'number'
+          type: 'boolean'
         },
         "id": {
           name: 'id',

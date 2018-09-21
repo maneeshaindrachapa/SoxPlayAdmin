@@ -8,13 +8,14 @@ import {
 declare var Object: any;
 export interface UserInterface {
   "fullname"?: string;
-  "email": string;
   "gender"?: number;
   "title"?: string;
   "contact"?: string;
   "sockSize"?: number;
+  "accountType"?: string;
   "realm"?: string;
   "username"?: string;
+  "email": string;
   "emailVerified"?: boolean;
   "id"?: number;
   "password"?: string;
@@ -28,13 +29,14 @@ export interface UserInterface {
 
 export class User implements UserInterface {
   "fullname": string;
-  "email": string;
   "gender": number;
   "title": string;
   "contact": string;
   "sockSize": number;
+  "accountType": string;
   "realm": string;
   "username": string;
+  "email": string;
   "emailVerified": boolean;
   "id": number;
   "password": string;
@@ -81,10 +83,6 @@ export class User implements UserInterface {
           name: 'fullname',
           type: 'string'
         },
-        "email": {
-          name: 'email',
-          type: 'string'
-        },
         "gender": {
           name: 'gender',
           type: 'number'
@@ -101,12 +99,20 @@ export class User implements UserInterface {
           name: 'sockSize',
           type: 'number'
         },
+        "accountType": {
+          name: 'accountType',
+          type: 'string'
+        },
         "realm": {
           name: 'realm',
           type: 'string'
         },
         "username": {
           name: 'username',
+          type: 'string'
+        },
+        "email": {
+          name: 'email',
           type: 'string'
         },
         "emailVerified": {

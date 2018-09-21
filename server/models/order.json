@@ -13,21 +13,37 @@
     },
     "shippingCost": {
       "type": "number",
-      "required": true
+      "required": true,
+      "dataType": "float",
+      "precision": 8
     },
     "totalCost": {
       "type": "number",
-      "required": true
+      "required": true,
+      "dataType": "float",
+      "precision": 8
     },
     "finalCost": {
       "type": "number",
-      "required": true
+      "required": true,
+      "dataType": "float",
+      "precision": 8
     },
     "trackingId": {
       "type": "string"
     },
     "status": {
       "type": "string"
+    },
+    "coupon": {
+      "type": "number"
+    },
+    "additionalNote": {
+      "type": "string"
+    },
+    "raw_payment_info": {
+      "type": "string",
+      "dataType": "longtext"
     }
   },
   "validations": [],

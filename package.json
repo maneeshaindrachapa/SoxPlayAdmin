@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint && nsp check",
-    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/angular/src/app/services/sdk"
+    "build": "./node_modules/.bin/lb-sdk server/server.js ./client/angular/src/app/services/sdk"
   },
   "dependencies": {
     "body-parser": "^1.9.0",
@@ -36,8 +36,14 @@
     "passport-local": "^1.0.0",
     "passport-oauth2": "^1.1.2",
     "passport-twitter": "^1.0.2",
+    "morgan": "^1.9.0",
+    "paypal-rest-sdk": "^1.8.1",
+    "rotating-file-stream": "^1.3.6",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^2.0.0"
+    "stripe": "^6.2.1",
+    "strong-error-handler": "^1.1.0",
+    "winston": "^3.0.0",
+    "winston-daily-rotate-file": "^3.2.3"
   },
   "devDependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.3.1",

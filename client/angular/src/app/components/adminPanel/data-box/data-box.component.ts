@@ -48,9 +48,9 @@ export class DataBoxComponent implements OnInit {
     });
   }
   getIncompleteOrders(){
-    this.orderApi.byStatus("pending").subscribe(data=>{
+    /*this.orderApi.byStatus("pending").subscribe(data=>{
       this.incompleteOrders=data.length;
-    });
+    });*/
   }
   getItemsSold(){
     this.orderDetailApi.find({include:["order"]}).subscribe(data=>{

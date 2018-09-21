@@ -7,7 +7,6 @@ declare var Object: any;
 export interface ThemeInterface {
   "name": string;
   "expired": boolean;
-  "fullPackPrice": number;
   "id"?: number;
   item?: Item[];
 }
@@ -15,7 +14,6 @@ export interface ThemeInterface {
 export class Theme implements ThemeInterface {
   "name": string;
   "expired": boolean;
-  "fullPackPrice": number;
   "id": number;
   item: Item[];
   constructor(data?: ThemeInterface) {
@@ -59,10 +57,6 @@ export class Theme implements ThemeInterface {
           name: 'expired',
           type: 'boolean',
           default: false
-        },
-        "fullPackPrice": {
-          name: 'fullPackPrice',
-          type: 'number'
         },
         "id": {
           name: 'id',

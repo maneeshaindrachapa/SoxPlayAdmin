@@ -13,17 +13,26 @@
     },
     "price": {
       "type": "number",
-      "required": true
+      "required": true,
+      "dataType": "float",
+      "precision": 2
+    },
+    "salePrice": {
+      "type": "number",
+      "required": true,
+      "dataType": "float",
+      "precision": 2
     },
     "description": {
-      "type": "text",
-      "required": true
+      "type": "string",
+      "required": true,
+      "dataType": "longtext"
     },
     "hits": {
       "type": "number",
       "default": 0
     },
-    "onSale": {
+    "disabled": {
       "type": "boolean",
       "required": true,
       "default": false
@@ -34,9 +43,14 @@
     "weight": {
       "type": "number"
     },
-    "salePrice": {
-      "type": "number",
-      "required": true
+    "category": {
+      "type" : "string",
+      "required": true,
+      "default": "single"
+    },
+    "link": {
+      "type": "string",
+      "default": ""
     }
   },
   "validations": [],

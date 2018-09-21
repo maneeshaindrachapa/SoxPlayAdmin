@@ -7,10 +7,6 @@
       "type": "string",
       "required": false
     },
-    "email": {
-      "type": "string",
-      "required": true
-    },
     "gender": {
       "type": "number",
       "required": false
@@ -25,6 +21,10 @@
     },
     "sockSize": {
       "type": "number",
+      "required": false
+    },
+    "accountType": {
+      "type": "string",
       "required": false
     }
   },
@@ -62,7 +62,13 @@
     {
       "accessType": "READ",
       "principalType": "ROLE",
-      "principalId": "$everyone",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
       "permission": "ALLOW"
     }
   ],

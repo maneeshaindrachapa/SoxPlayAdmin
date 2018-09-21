@@ -30,10 +30,10 @@ export class OrdersChartComponent implements OnInit {
   }
 
   getIncompleteOrders() {
-    this.orderApi.byStatus("pending").subscribe(data => {
+   /* this.orderApi.byStatus("pending").subscribe(data => {
       this.incompleteOrders = data.length;
       this.createChart();
-    });
+    });*/
   }
 
   createChart() {

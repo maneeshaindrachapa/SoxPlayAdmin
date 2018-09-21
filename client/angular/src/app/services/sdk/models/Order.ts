@@ -12,6 +12,9 @@ export interface OrderInterface {
   "finalCost": number;
   "trackingId"?: string;
   "status"?: string;
+  "coupon"?: number;
+  "additionalNote"?: string;
+  "raw_payment_info"?: string;
   "id"?: number;
   "userId"?: number;
   user?: User;
@@ -25,6 +28,9 @@ export class Order implements OrderInterface {
   "finalCost": number;
   "trackingId": string;
   "status": string;
+  "coupon": number;
+  "additionalNote": string;
+  "raw_payment_info": string;
   "id": number;
   "userId": number;
   user: User;
@@ -84,6 +90,18 @@ export class Order implements OrderInterface {
         },
         "status": {
           name: 'status',
+          type: 'string'
+        },
+        "coupon": {
+          name: 'coupon',
+          type: 'number'
+        },
+        "additionalNote": {
+          name: 'additionalNote',
+          type: 'string'
+        },
+        "raw_payment_info": {
+          name: 'raw_payment_info',
           type: 'string'
         },
         "id": {

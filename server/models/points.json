@@ -1,29 +1,28 @@
 {
-  "name": "theme",
-  "plural": "themes",
+  "name": "points",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string",
-      "required": true
+    "value": {
+      "type": "number",
+      "required": true,
+      "default": 0
     },
-    "expired": {
+    "valid": {
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "date": {
+      "type": "date",
+      "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "item": {
-      "type": "hasMany",
-      "model": "item"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

@@ -15,6 +15,7 @@ export interface AddressInterface {
   "state"?: string;
   "zipCode"?: number;
   "country": string;
+  "default"?: boolean;
   "id"?: number;
   "userId"?: number;
   user?: User;
@@ -31,6 +32,7 @@ export class Address implements AddressInterface {
   "state": string;
   "zipCode": number;
   "country": string;
+  "default": boolean;
   "id": number;
   "userId": number;
   user: User;
@@ -107,6 +109,11 @@ export class Address implements AddressInterface {
         "country": {
           name: 'country',
           type: 'string'
+        },
+        "default": {
+          name: 'default',
+          type: 'boolean',
+          default: false
         },
         "id": {
           name: 'id',
