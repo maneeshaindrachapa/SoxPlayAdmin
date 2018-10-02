@@ -59,6 +59,7 @@ import { WishListDetailApi } from './services/custom/WishListDetail';
 import { CombinationDetailsApi } from './services/custom/CombinationDetails';
 import { ExchangeRateApi } from './services/custom/ExchangeRate';
 import { EmailApi } from './services/custom/Email';
+import { StoresApi } from './services/custom/Stores';
 /**
 * @module SDKBrowserModule
 * @description
@@ -100,6 +101,7 @@ export class SDKBrowserModule {
         CombinationDetailsApi,
         ExchangeRateApi,
         EmailApi,
+        StoresApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

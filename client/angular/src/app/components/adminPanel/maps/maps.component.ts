@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import {  } from '../../../services/sdk/services/custom';
+import { StoresApi } from '../../../services/sdk/services/custom';
 
 @Component({
   selector: 'app-maps',
@@ -8,12 +8,25 @@ import {  } from '../../../services/sdk/services/custom';
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  totalStores=[];
+  latitudes=[];
+  longitudes=[];
+  lng: number = 10;
+  lat: number = 45.568;
 
-  constructor() { }
+  constructor(private storeApi:StoresApi) { }
 
   ngOnInit() {
+    this.getStoreDetails();
   }
-
+  
+  getStoreDetails(){
+    this.storeApi.find().subscribe(data=>{
+      this.totalStores=data;
+      for(let i=0;i<this.totalStores.length;i++){
+        this.latitudes.push(this.totalStores[i]["lat"]);
+        this.longitudes.push(this.totalStores[i]["lng"]);
+      }
+    })
+  }
 }

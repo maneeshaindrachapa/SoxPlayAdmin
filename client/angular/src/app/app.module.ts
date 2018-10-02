@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TooltipModule} from 'ngx-bootstrap';
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin/signin.component';
@@ -75,6 +76,7 @@ const appRoutes: Routes= [
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyBk5WAnUcL7EAwKrogcPjanKaE6ZRgbvhQ'
     }),
+    AgmJsMarkerClustererModule,
     SDKBrowserModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],

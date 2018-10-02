@@ -11,6 +11,7 @@ import { WishListDetail } from '../../models/WishListDetail';
 import { CombinationDetails } from '../../models/CombinationDetails';
 import { ExchangeRate } from '../../models/ExchangeRate';
 import { Email } from '../../models/Email';
+import { Stores } from '../../models/Stores';
 
 export interface Models { [name: string]: any }
 
@@ -29,6 +30,7 @@ export class SDKModels {
     CombinationDetails: CombinationDetails,
     ExchangeRate: ExchangeRate,
     Email: Email,
+    Stores: Stores,
     
   };
 

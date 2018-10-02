@@ -1,3 +1,5 @@
-agm-map {
+  agm-map {
     height:670px;
+    width: 100%;
+    background-color: grey;
   }

@@ -1,3 +1,8 @@
 <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+      <agm-marker *ngFor="let marker of totalStores" [label]="{color: '#000',
+      fontFamily: 'Exo',
+      fontSize: '25px',
+      fontWeight: 'bold',text:marker.name}" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
+    </agm-marker-cluster>
 </agm-map>
