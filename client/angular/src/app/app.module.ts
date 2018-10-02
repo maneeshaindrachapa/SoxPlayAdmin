@@ -6,6 +6,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TooltipModule} from 'ngx-bootstrap';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin/signin.component';
@@ -25,13 +26,18 @@ import { CKEditorModule } from 'ng2-ckeditor';
 import { DataBoxComponent } from './components/adminPanel/data-box/data-box.component';
 import { OrdersChartComponent } from './components/adminPanel/orders-chart/orders-chart.component';
 import { SalesChartComponent } from './components/adminPanel/sales-chart/sales-chart.component';
+import { TopFiveItemsComponent } from './components/adminPanel/top-five-items/top-five-items.component';
+import { TopFiveThemesComponent } from './components/adminPanel/top-five-themes/top-five-themes.component';
+import { MapsComponent } from './components/adminPanel/maps/maps.component';
+import { MapsFullComponent } from './components/adminPanel/maps-full/maps-full.component';
 
 const appRoutes: Routes= [
   {path:"", component:SigninComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"items",component:ItemsEditDeleteComponent},
   {path:"theme",component:ThemeFullComponent},
-  {path:"users",component:UserFullComponent}
+  {path:"users",component:UserFullComponent},
+  {path:"maps",component:MapsFullComponent}
 ];
 
 @NgModule({
@@ -50,7 +56,11 @@ const appRoutes: Routes= [
     UserFullComponent,
     DataBoxComponent,
     OrdersChartComponent,
-    SalesChartComponent
+    SalesChartComponent,
+    TopFiveItemsComponent,
+    TopFiveThemesComponent,
+    MapsComponent,
+    MapsFullComponent
   ],
   imports: [
     FlexModule,
@@ -62,6 +72,9 @@ const appRoutes: Routes= [
     HttpModule,
     ReactiveFormsModule, 
     CKEditorModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBk5WAnUcL7EAwKrogcPjanKaE6ZRgbvhQ'
+    }),
     SDKBrowserModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
