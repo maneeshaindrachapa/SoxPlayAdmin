@@ -40,4 +40,7 @@ export class NavbarComponent implements OnInit {
   user_route(){
     this.router.navigate(["users"]);
   }
+  map_route(){
+    this.router.navigate(["maps"]);
+  }
 }

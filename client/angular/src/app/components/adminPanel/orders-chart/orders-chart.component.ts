@@ -13,8 +13,8 @@ export class OrdersChartComponent implements OnInit {
   totalOrders: number = 0;
   incompleteOrders: number = 0;
   chart = [];
-  chart_=[];
-  percentage:number=0;
+  chart_ = [];
+  percentage: number = 0;
 
   constructor(private orderApi: OrderApi, private elementRef: ElementRef) { }
 
@@ -26,17 +26,18 @@ export class OrdersChartComponent implements OnInit {
   getNoOfOrders() {
     this.orderApi.find().subscribe(data => {
       this.totalOrders = data.length;
+      console.log(this.totalOrders);
     });
   }
 
   getIncompleteOrders() {
     this.orderApi.find().subscribe(data => {
-      for(let i=0;i<data.length;i++){
-        if(data[i]['status']=="pending"){
-          this.incompleteOrders+=1;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i]['status'] == "pending") {
+          this.incompleteOrders += 1;
         }
       }
-      
+
       this.createChart();
     })
   }
@@ -46,17 +47,17 @@ export class OrdersChartComponent implements OnInit {
     this.chart = new Chart(htmlRef, {
       type: 'doughnut',
       data: {
-        labels: ["Total Orders","Pending Orders"],
+        labels: ["Total Orders", "Pending Orders"],
         datasets: [
           {
             label: "Orders",
             backgroundColor: ['#007bff', "#ced4da"],
-            data: [this.totalOrders,this.incompleteOrders]
+            data: [this.totalOrders, this.incompleteOrders]
           }
         ]
       },
       options: {
-        legend:false,
+        legend: false,
         //Boolean - Whether we should show a stroke on each segment
         segmentShowStroke: true,
         //String - The colour of each segment stroke
@@ -83,15 +84,15 @@ export class OrdersChartComponent implements OnInit {
     });
 
     let htmlRef_ = this.elementRef.nativeElement.querySelector('#bar-chart-horizontal');
-    this.chart_=new Chart(htmlRef_, {
+    this.chart_ = new Chart(htmlRef_, {
       type: 'bar',
       data: {
-        labels: ["Total","Pending"],
+        labels: ["Total", "Pending"],
         datasets: [
           {
             label: "Orders",
             backgroundColor: ['#007bff', "#ced4da"],
-            data: [this.totalOrders,this.incompleteOrders]
+            data: [this.totalOrders, this.incompleteOrders]
           }
         ]
       },
@@ -107,6 +108,9 @@ export class OrdersChartComponent implements OnInit {
               lineWidth: "4px",
               color: "rgba(0, 0, 0, .2)",
               zeroLineColor: "transparent"
+            },
+            ticks: {
+              beginAtZero: true
             }
           }],
           xAxes: [{
@@ -117,10 +121,10 @@ export class OrdersChartComponent implements OnInit {
           }]
         }
       }
-  });
+    });
     this.calcPercentage();
   }
-  calcPercentage(){
-    this.percentage=parseFloat((((this.incompleteOrders)/this.totalOrders)*100).toPrecision(4));
+  calcPercentage() {
+    this.percentage = parseFloat((((this.incompleteOrders) / this.totalOrders) * 100).toPrecision(4));
   }
 }
