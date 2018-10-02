@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header no-border">
+    <div class="d-flex justify-content-between">
+      <h3 class="card-title">Top Trending Items</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="d-flex">
+      <p class="d-flex flex-column">
+        <span class="text-bold text-lg"></span>
+        <span></span>
+      </p>
+      <p class="ml-auto d-flex flex-column text-right">
+        <span class="text-muted"></span>
+      </p>
+    </div>
+    <div class="position-relative mb-4">
+      <div class="row">
+        <div class="col-md-12">
+          <canvas id="bar-chart-horizontal" style="height: 210px !important;">{{chart_}}</canvas>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-row justify-content-end">
+      <!--span class="mr-2">
+        <i class="fa fa-square text-primary"></i> Total Orders
+      </span>
+      <span>
+        <i class="fa fa-square text-gray"></i> Pending Orders
+      </span-->
+        <!--p *ngFor="let item of finalOrderList;let i=index">{{1+i}}:&nbsp;{{item}}&nbsp;</p-->
+    </div>
+  </div>
+</div>
