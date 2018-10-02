@@ -18,27 +18,27 @@
             <input type="text" class="form-control" id="name" placeholder="Name"name="name" [(ngModel)]="item.name">
           </div>
           <div class="form-group">
-            <input type="number" class="form-control" id="price" placeholder="Price" min="0" name="price" [(ngModel)]="item.price">
+            <div class="row" style="margin-left:auto;margin-right:auto">
+              <input type="number" class="form-control  col-md-6" id="price" placeholder="Price" min="0" name="price" [(ngModel)]="item.price" >
+              <input type="number" class="form-control col-md-6" id="saleprice" placeholder="Sale Price" min="0" name="sprice" [(ngModel)]="item.salePrice">
+            </div>
           </div>
           <div class="form-group">
-            <input type="number" class="form-control" id="saleprice" placeholder="Sale Price" min="0" name="sprice" [(ngModel)]="item.salePrice">
+              <div class="row" style="margin-left:auto;margin-right:auto">
+                <input type="text" class="form-control col-md-6" id="color" placeholder="Color" name="color" [(ngModel)]="item.color">
+                <select class="form-control col-md-6" name="expired" [(ngModel)]="item.category">
+                  <option value="" disabled selected>Sox Type</option>
+                  <option value="sox-1">sox-1</option>
+                  <option value="sox-3">sox-3</option>
+                  <option value="sox-6">sox-6</option>
+                </select>
+              </div>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="color" placeholder="Color" name="color" [(ngModel)]="item.color">
-          </div>
-          <div class="form-group">
-            <select class="form-control" name="expired" [(ngModel)]="item.category">
-              <option value="" disabled selected>Sox Type</option>
-              <option value="sox-1">sox-1</option>
-              <option value="sox-3">sox-3</option>
-              <option value="sox-6">sox-6</option>
-            </select>
-          </div>
-          <textarea class="form-control" rows="3" placeholder="Item Description"  name="desc" [(ngModel)]="item.description"></textarea>
+          <textarea class="form-control" rows="1" placeholder="Item Description"  name="desc" [(ngModel)]="item.description"></textarea>
         </div>
         <!--div class="card-footer"-->
         <div class="row-md-6">
-          <button type="submit" class="btn btn-primary" style="width:100%" (click)="addItem()">Add Item</button>
+          <button type="submit" class="btn btn-primary" style="width:95%;margin-left:2.5%;margin-bottom:0.5%" (click)="addItem()">Add Item</button>
         </div>
         <!--/div-->
       </form>
