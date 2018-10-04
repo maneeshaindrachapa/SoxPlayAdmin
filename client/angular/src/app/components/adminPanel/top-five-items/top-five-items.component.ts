@@ -36,7 +36,11 @@ export class TopFiveItemsComponent implements OnInit {
         finalTemp[j].push(this.countInArray(temp, newTemp[j]));
       }
       finalTemp.sort(this.compareSecondColumn);
-      for (let i = 0; i < 5; i++) {
+      let length_=newTemp.length;
+      if(length_>=5){
+        length_=5;
+      }
+      for (let i = 0; i < length_; i++) {
         this.finalOrderCount.push(finalTemp[finalTemp.length - 1 - i][1]);
         this.itemApi.findById(finalTemp[finalTemp.length - 1 - i][0]).subscribe(data => {
           this.finalOrderList.push(data["name"]);
