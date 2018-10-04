@@ -6,3 +6,36 @@
       fontWeight: 'bold',text:marker.name}" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
     </agm-marker-cluster>
 </agm-map>
+<div class="card">
+    <div class="card-header no-border">
+      <div class="d-flex justify-content-between">
+        <h3 class="card-title">Add Store Details</h3>
+      </div>
+    </div>
+    <div class="card-body" style="padding-top:0 !important">
+      <div>
+        <form role="form">
+          <div class="card-body" style="padding-top:0 !important">
+            <div class="form-group">
+              
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" placeholder="Store Name"name="name" [(ngModel)]="store.name">
+            </div>
+            <div class="form-group">
+              <div class="row" style="margin-left:auto;margin-right:auto">
+                <input type="number" class="form-control  col-md-6" id="Longitude" placeholder="Longitude"  name="Longitude" [(ngModel)]="store.lng" >
+                <input type="number" class="form-control col-md-6" id="Latitude" placeholder="Latitude"  name="Latitude" [(ngModel)]="store.lat">
+              </div>
+            </div>
+            
+            <textarea class="form-control" rows="3" placeholder="Address"  name="address" [(ngModel)]="store.address"></textarea>
+          </div>
+          <!--div class="card-footer"-->
+          <div class="row-md-6">
+            <button type="submit" class="btn btn-primary" style="width:95%;margin-left:2.5%;margin-bottom:0.5%" (click)="addStore()">Add Branch</button>
+          </div>
+          <!--/div-->
+        </form>
+      </div>
+    </div>
