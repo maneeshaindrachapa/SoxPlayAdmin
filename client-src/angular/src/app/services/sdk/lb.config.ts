@@ -5,13 +5,13 @@ import {environment} from "../../../environments/environment";
 * @module LoopBackConfig
 * @description
 *
-* The LoopBackConfig module help developers to externally 
+* The LoopBackConfig module help developers to externally
 * configure the base url and api version for loopback.io
 *
 * Example
 *
 * import { LoopBackConfig } from './sdk';
-* 
+*
 * @Component() // No metadata needed for this module
 *
 * export class MyApp {
@@ -34,7 +34,7 @@ export class LoopBackConfig {
   public static setApiVersion(version: string = 'api'): void {
     LoopBackConfig.version = version;
   }
-  
+
   public static getApiVersion(): string | number {
     return LoopBackConfig.version;
   }
@@ -42,7 +42,7 @@ export class LoopBackConfig {
   public static setBaseURL(url: string = '/'): void {
     LoopBackConfig.path = url;
   }
-  
+
   public static getPath(): string {
     return LoopBackConfig.path;
   }

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  path: '//0.0.0.0:3000'
+  path: '//35.154.163.246/admin'
 };
