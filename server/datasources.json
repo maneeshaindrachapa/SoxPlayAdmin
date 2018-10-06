@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "mysql": {
-    "host": "localhost",
+    "host": "soxplay-mysql.c0yfs5ycz21v.ap-south-1.rds.amazonaws.com",
     "port": 3306,
     "url": "",
-    "database": "soxplay_test",
-    "password": "root",
+    "database": "soxplay_db",
+    "password": "rootroot",
     "name": "mysql",
-    "user": "root",
+    "user": "viranmalaka",
     "connector": "mysql"
   },
   "email": {

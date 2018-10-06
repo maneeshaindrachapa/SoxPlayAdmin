@@ -12,9 +12,9 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var flash      = require('express-flash');
 
-app.get("/", (req, res) => {
-  res.send("Server working....");
-});
+// app.get("/", (req, res) => {
+//   res.send("Server working....");
+// });
 
 app.start = function () {
   // start the web server

@@ -1,4 +1,6 @@
 /* tslint:disable */
+import {environment} from "../../../environments/environment";
+
 /**
 * @module LoopBackConfig
 * @description
@@ -20,7 +22,7 @@
 * }
 **/
 export class LoopBackConfig {
-  private static path: string = '//0.0.0.0:3000';
+  private static path: string = environment.path;
   private static version: string | number = 'api';
   private static authPrefix: string = '';
   private static debug: boolean = true;
