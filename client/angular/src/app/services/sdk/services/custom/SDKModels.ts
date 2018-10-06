@@ -12,6 +12,7 @@ import { CombinationDetails } from '../../models/CombinationDetails';
 import { ExchangeRate } from '../../models/ExchangeRate';
 import { Email } from '../../models/Email';
 import { Stores } from '../../models/Stores';
+import { AdminUser } from '../../models/AdminUser';
 
 export interface Models { [name: string]: any }
 
@@ -31,6 +32,7 @@ export class SDKModels {
     ExchangeRate: ExchangeRate,
     Email: Email,
     Stores: Stores,
+    AdminUser: AdminUser,
     
   };
 

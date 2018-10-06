@@ -10,7 +10,6 @@ import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OrderDetail } from '../../models/OrderDetail';
-import { SocketConnection } from '../../sockets/socket.connections';
 import { Order } from '../../models/Order';
 import { Item } from '../../models/Item';
 
@@ -23,12 +22,11 @@ export class OrderDetailApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
-    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  connection,  models, auth, errorHandler);
+    super(http,  models, auth, errorHandler);
   }
 
   /**

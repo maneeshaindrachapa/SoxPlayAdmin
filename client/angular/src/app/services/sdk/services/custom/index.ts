@@ -11,5 +11,6 @@ export * from './CombinationDetails';
 export * from './ExchangeRate';
 export * from './Email';
 export * from './Stores';
+export * from './AdminUser';
 export * from './SDKModels';
 export * from './logger.service';

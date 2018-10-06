@@ -5,16 +5,16 @@
       <div class="wrapper">
         <div class="row">
           <div class="label">Username</div>
-          <input type="text">
+          <input type="text" [(ngModel)]="user.username">
         </div>
         <div class="row">
           <div class="label">Password</div>
-          <input type="password">
+          <input type="password" [(ngModel)]="user.pass">
         </div>
         <div class="row">
           <button (click)="dashboard_route()">Login</button>
-        </div>  
-      </div>    
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AdminUserApi} from '../../../services/sdk/services/custom';
 
 @Component({
   selector: 'app-signin',
@@ -8,11 +9,17 @@ import { Router } from "@angular/router";
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  user = {username: '', pass: ''};
+
+  constructor(private router: Router, private userAPI: AdminUserApi) {
+  }
 
   ngOnInit() {
   }
-  dashboard_route(){
-    this.router.navigate(["dashboard"]);
+
+  dashboard_route() {
+    this.userAPI.login({username: this.user.username, password: this.user.pass}).subscribe(data => {
+      this.router.navigate(['dashboard']);
+    });
   }
 }

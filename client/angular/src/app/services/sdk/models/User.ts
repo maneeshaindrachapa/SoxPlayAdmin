@@ -13,15 +13,7 @@ export interface UserInterface {
   "contact"?: string;
   "sockSize"?: number;
   "accountType"?: string;
-  "realm"?: string;
-  "username"?: string;
-  "email": string;
-  "emailVerified"?: boolean;
   "id"?: number;
-  "password"?: string;
-  identities?: any[];
-  credentials?: any[];
-  accessTokens?: any[];
   address?: Address[];
   cartDetail?: CartDetail[];
   wishListDetail?: WishListDetail[];
@@ -34,15 +26,7 @@ export class User implements UserInterface {
   "contact": string;
   "sockSize": number;
   "accountType": string;
-  "realm": string;
-  "username": string;
-  "email": string;
-  "emailVerified": boolean;
   "id": number;
-  "password": string;
-  identities: any[];
-  credentials: any[];
-  accessTokens: any[];
   address: Address[];
   cartDetail: CartDetail[];
   wishListDetail: WishListDetail[];
@@ -103,56 +87,12 @@ export class User implements UserInterface {
           name: 'accountType',
           type: 'string'
         },
-        "realm": {
-          name: 'realm',
-          type: 'string'
-        },
-        "username": {
-          name: 'username',
-          type: 'string'
-        },
-        "email": {
-          name: 'email',
-          type: 'string'
-        },
-        "emailVerified": {
-          name: 'emailVerified',
-          type: 'boolean'
-        },
         "id": {
           name: 'id',
           type: 'number'
         },
-        "password": {
-          name: 'password',
-          type: 'string'
-        },
       },
       relations: {
-        identities: {
-          name: 'identities',
-          type: 'any[]',
-          model: '',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'userId'
-        },
-        credentials: {
-          name: 'credentials',
-          type: 'any[]',
-          model: '',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'userId'
-        },
-        accessTokens: {
-          name: 'accessTokens',
-          type: 'any[]',
-          model: '',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'userId'
-        },
         address: {
           name: 'address',
           type: 'Address[]',

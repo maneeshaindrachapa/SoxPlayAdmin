@@ -10,7 +10,6 @@ import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { WishListDetail } from '../../models/WishListDetail';
-import { SocketConnection } from '../../sockets/socket.connections';
 import { User } from '../../models/User';
 import { Item } from '../../models/Item';
 
@@ -23,12 +22,11 @@ export class WishListDetailApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
-    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  connection,  models, auth, errorHandler);
+    super(http,  models, auth, errorHandler);
   }
 
   /**

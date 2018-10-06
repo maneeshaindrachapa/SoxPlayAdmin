@@ -17,7 +17,7 @@
     "dataSource": "mysql",
     "public": true,
     "options": {
-      "emailVerificationRequired": true
+      "emailVerificationRequired": false
     }
   },
   "accessToken": {
@@ -84,6 +84,10 @@
     "dataSource": "email"
   },
   "stores": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "AdminUser": {
     "dataSource": "mysql",
     "public": true
   }

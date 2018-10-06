@@ -7,8 +7,8 @@
     "host": "localhost",
     "port": 3306,
     "url": "",
-    "database": "fashion_test",
-    "password": "",
+    "database": "soxplay_test",
+    "password": "root",
     "name": "mysql",
     "user": "root",
     "connector": "mysql"
@@ -16,15 +16,17 @@
   "email": {
     "name": "email",
     "connector": "mail",
-    "transports": [{
-      "type": "SMTP",
-      "host": "smtp.gmail.com",
-      "secure": true,
-      "port": 465,
-      "auth": {
-        "user": "soxplaydev@gmail.com",
-        "pass": "\"qbPt\"]6?q}Pb:$J"
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "soxplaydev@gmail.com",
+          "pass": "\"qbPt\"]6?q}Pb:$J"
+        }
       }
-    }]
+    ]
   }
 }

@@ -44,10 +44,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
-import { SocketBrowser } from './sockets/socket.browser';
-import { SocketDriver } from './sockets/socket.driver';
-import { SocketConnection } from './sockets/socket.connections';
-import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
 import { AddressApi } from './services/custom/Address';
 import { CartDetailApi } from './services/custom/CartDetail';
@@ -60,6 +56,7 @@ import { CombinationDetailsApi } from './services/custom/CombinationDetails';
 import { ExchangeRateApi } from './services/custom/ExchangeRate';
 import { EmailApi } from './services/custom/Email';
 import { StoresApi } from './services/custom/Stores';
+import { AdminUserApi } from './services/custom/AdminUser';
 /**
 * @module SDKBrowserModule
 * @description
@@ -74,8 +71,7 @@ import { StoresApi } from './services/custom/Stores';
   declarations: [ ],
   exports:      [ ],
   providers:    [
-    ErrorHandler,
-    SocketConnection
+    ErrorHandler
   ]
 })
 export class SDKBrowserModule {
@@ -89,7 +85,6 @@ export class SDKBrowserModule {
         LoopBackAuth,
         LoggerService,
         SDKModels,
-        RealTime,
         UserApi,
         AddressApi,
         CartDetailApi,
@@ -102,9 +97,9 @@ export class SDKBrowserModule {
         ExchangeRateApi,
         EmailApi,
         StoresApi,
+        AdminUserApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
-        { provide: SocketDriver, useClass: SocketBrowser }
+        { provide: SDKStorage, useClass: StorageBrowser }
       ]
     };
   }

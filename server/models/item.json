@@ -44,7 +44,7 @@
       "type": "number"
     },
     "category": {
-      "type" : "string",
+      "type": "string",
       "required": true,
       "default": "single"
     },
